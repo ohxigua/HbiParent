@@ -1,0 +1,90 @@
+<configuration scan="true" scanPeriod="3 seconds">
+    <!-- <turboFilter class="ch.qos.logback.classic.turbo.MDCFilter">
+        <MDCKey>userId</MDCKey>
+        <Value>1</Value>
+        <OnMatch>ACCEPT</OnMatch>
+        <OnMismatch>DENY</OnMismatch>
+    </turboFilter> -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%X{userId}] [%X{requestId}] %logger - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!--    <appender name="PLATFORM-FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+            <encoder>
+                <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%X{accountId}] [%X{requestId}] %logger -  %msg%n</pattern>
+            </encoder>
+            <file>${catalina.base}/logs/hap.log</file>
+            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                <fileNamePattern>${catalina.base}/logs/hap-%d{yyyy-MM-dd}.log</fileNamePattern>
+            </rollingPolicy>
+        </appender>-->
+
+    <!-- <appender name="stash" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%X{accountId}] [%X{requestId}] %logger -  %msg%n</pattern>
+        </encoder>
+        <destination>elk-hap:4560</destination>
+    </appender> -->
+
+
+    <root level="DEBUG">
+        <appender-ref ref="STDOUT" />
+        <!-- <appender-ref ref="stash" /> -->
+    </root>
+    <logger name="org.activiti.engine" level="INFO" additivity="false">
+        <appender-ref ref="STDOUT" />
+    </logger>
+    <logger name="org.activiti.spring.SpringTransactionInterceptor" level="INFO" additivity="false">
+        <appender-ref ref="STDOUT" />
+    </logger>
+    <logger name="org.apache.ibatis.transaction.managed.ManagedTransaction" level="INFO" additivity="false">
+        <appender-ref ref="STDOUT" />
+    </logger>
+    <logger name="org.quartz.core.QuartzSchedulerThread" level="INFO" additivity="false">
+        <appender-ref ref="STDOUT" />
+    </logger>
+    <logger name="org.springframework.scheduling.quartz.LocalDataSourceJobStore" level="WARN" additivity="false">
+        <appender-ref ref="STDOUT" />
+    </logger>
+    <logger name="org.quartz.impl.jdbcjobstore.StdRowLockSemaphore" level="INFO" additivity="false">
+        <appender-ref ref="STDOUT" />
+    </logger>
+
+    <poNo>220APFP19516XU1</poNo>
+    <vendor>888790 VERTIV ENERGY PRIVATE LIMITED. Plot No. 115/2, Ramtekadi Industrial Area, Hadapsar, Pune -411 013</vendor>
+    <vendorAttn>Kulkarni, Sadas, </vendorAttn>
+    <vendorTel>0091-02223154580;</vendorTel>
+    <vendorFax>0091-225002415</vendorFax>
+    <vendorEmail></vendorEmail>
+    <shipTo>Atlas Asia Limited
+        Atlas Asia Limited C/O DHL Global Forwarding (Hong Kong) Ltd.
+        Unit 5010W - 5019W,5/F ATL Logistics Center A, Berth 3,
+        Kwai Chung Container Terminal, Kwai Chung,NT,HK CN,,HongKong,</shipTo>
+    <attn>DHL/HKG-LMS Team</attn>
+    <tel>852-2419 5336</tel>
+    <fax>852-2196 9241</fax>
+    <email>edghk-dgf-lmsetcb@dhl.com</email>
+    <billTo>Atlas Asia Limited Atlas Asia Limited
+        FLAT/RM 1503, 15/F, 625 King's Road North Point
+        CN,,HongKong,</billTo>
+    <mailTo>陕西省西安市高新区科技三路55号 巨安国际ANo.55, 3rd Keji Road, Xi An Hi-tech Industries
+        Development Zone, Xi An province, China</mailTo>
+    <postCode>710075</postCode>
+    <phone>86-029-88331195</phone>
+    <itemLine>
+        <item>01220646</item>
+        <partNo>FP01531AP2QI002-FPUPS-15kVA-220VDC-6P-FP01531AP2QI002</partNo>
+        <manufactory></manufactory>
+        <ver>0</ver>
+        <quantity>2</quantity>
+        <unit>EA</unit>
+        <unitPrice>7707.7</unitPrice>
+        <amount>15415.4</amount>
+        <delivery_date>2019/6/7</delivery_date>
+    </itemLine>
+
+</configuration>
+
+
